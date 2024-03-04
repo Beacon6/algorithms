@@ -17,8 +17,12 @@ function binarySearch(array: number[], n: number): number {
     return -1;
 }
 
-const a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+function testBinarySearch(n: number): number {
+    const a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-console.log(binarySearch(a, 6));
-console.log(binarySearch(a, 16));
+    return binarySearch(a, n);
+}
+
+console.log(testBinarySearch(6));
+console.log(testBinarySearch(16));
 
