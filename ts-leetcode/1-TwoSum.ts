@@ -1,25 +1,26 @@
 function twoSum(nums: number[], target: number): number[] {
-  let result: number[] = []
+  const map: { [key: number]: number } = {};
 
-  for (let i = 0; i < nums.length; i++) {
-    const n = target - nums[i];
+  let i = 0;
+  let x = 0;
 
-    if (result.length === 0) {
-      for (let j = i + 1; j <= nums.length; j++) {
-        if (nums[j] === n) {
-          result = [i, j];
-          break;
-        }
-      }
+  for (; i < nums.length; i++) {
+    x = target - nums[i];
+
+    if (x in map) {
+      x = map[x];
+      break;
+    } else {
+      map[nums[i]] = i;
     }
   }
 
-  return result;
+  return [i, x];
 }
 
 function testTwoSum(): number[] {
   const nums = [3, 3];
-  const target = 6
+  const target = 6;
 
   return twoSum(nums, target);
 }
